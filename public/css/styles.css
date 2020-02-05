@@ -1,0 +1,15 @@
+canvas {
+    background: #FFA000;
+    border-style: dashed;
+}
+
+.headings {
+    background: #FFA000;
+    text-align: center;
+    padding-top: 5px;
+    width: 250px;
+    height: 40px;
+    position: center;
+    border-style: dashed;
+    font-family: Bahnschrift;
+}

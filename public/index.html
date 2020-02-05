@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://math.seattleacademy.org/aldencutler/2017/public/css/styles.css">
+    <title>Canvas Bar Clock</title>
+</head>
+
+<body translate="no">
+    <h1 id="theTitle" class="headings">Bar Clock</h1>
+    <canvas id="myCanvas" width="250px" height="250px">YoUr BroWsEr SucKS bEcaUsE iT caNt rUn caNvAs hEe HeE hAa HaA.</canvas>
+    <script id="rendered-js">
+    console.clear;
+    var canvas = document.getElementById("myCanvas");
+    console.log(canvas.width, canvas.height);
+    var ctx = canvas.getContext("2d");
+
+
+    function updateTime() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var d = new Date();
+        seconds = d.getSeconds();
+        ctx.font = "35px Bahnschrift";
+        ctx.fillText(seconds, 175, 50);
+        ctx.fillRect(175, 200, 40, seconds * -2);
+
+        minutes = d.getMinutes();
+        ctx.font = "35px Bahnschrift";
+        ctx.fillText(minutes, 100, 50);
+        ctx.fillRect(100, 200, 40, minutes * -2);
+
+        hours = d.getHours();
+        hours = ((hours + 11) % 12 + 1)
+        ctx.font = "35px Bahnschrift";
+        ctx.fillText(hours, 30, 50);
+        ctx.fillRect(25, 200, 40, hours * -12);
+    }
+
+    updateTime();
+    setInterval(updateTime, 1)
+    </script>
+    <script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script>
+</body>
+
+</html>
